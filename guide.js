@@ -47,13 +47,14 @@ function renderGuide(index,moveFocus=false) {
   guidePanel.setAttribute('aria-labelledby',`guide-tab-${group.id}`);guidePanel.replaceChildren();
   const intro=document.createElement('p');intro.className='guide-panel-intro';intro.textContent=group.intro;guidePanel.append(intro);
   const grid=document.createElement('div');grid.className='guide-grid';
-  group.entries.forEach(([name,role,description,choice])=>{
-    const article=document.createElement('article');article.className='guide-card';
+  group.entries.forEach(([name,role,description,choice],entryIndex)=>{
+    const article=document.createElement('details');article.className='guide-card';article.open=entryIndex===0;
+    const summary=document.createElement('summary');
     const eyebrow=document.createElement('p');eyebrow.className='eyebrow';eyebrow.textContent=role;
-    const title=document.createElement('h3');title.textContent=name;
+    const title=document.createElement('span');title.className='ingredient-name';title.textContent=name;
     const body=document.createElement('p');body.textContent=description;
     const choose=document.createElement('p');choose.className='choose-for';const label=document.createElement('strong');label.textContent='CHOOSE FOR';const text=document.createElement('span');text.textContent=choice;choose.append(label,text);
-    article.append(eyebrow,title,body,choose);grid.append(article);
+    summary.append(title,eyebrow);article.append(summary,body,choose);grid.append(article);
   });
   guidePanel.append(grid);
   if(moveFocus)guideTabs.children[index].focus();
