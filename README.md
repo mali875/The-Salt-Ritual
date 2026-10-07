@@ -52,7 +52,7 @@ When you have a Stripe account, we can add a hosted checkout service to turn the
 - `styles.css`: colours and responsive layout.
 - `model.js`: ingredient menu, size prices and validated basket calculations. Prices are integer pence (800, 2000, 3000; extra botanical 200).
 - `script.js`: step-by-step builder, basket, browser storage and downloads.
-- `guide.js`: five-tab ingredient library with two concise benefit bullets per option, category artwork, and notes on scent, texture and cosmetic roles.
+- `guide.js`: five-tab ingredient library with two concise benefit bullets per option, individual ingredient artwork, and notes on scent, texture and cosmetic roles.
 - `assets/`: local botanical artwork and monogram; no external image or font requests. The orchid hero was created with built-in image generation as original website artwork. It is visual brand imagery, not a photograph of the finished product.
 - `tests/model.test.cjs`: run `node tests/model.test.cjs` to check pricing and saved-basket validation.
 
@@ -74,4 +74,4 @@ The guide separates cosmetic function from subjective fragrance profiles. It doe
 
 ## Category artwork
 
-Four generated editorial still lifes illustrate salt, oils, fragrance notes and dried botanicals. These are illustrative category artwork, not photographs of finished products. The guide image and builder background change by ingredient stage; boosters use a closer oil composition. Optimised WebP assets total under 500 KB.
+Four generated editorial still lifes illustrate salt, oils, fragrance notes and dried botanicals. These are illustrative category artwork, not photographs of finished products. The builder background changes by ingredient stage. The ingredient guide has a heading above full-width dropdowns, with faint still-life artwork behind each ingredient’s benefits. No-booster and no-botanical options use a simple finish.
