@@ -35,6 +35,18 @@ const ingredientGuide = [
 ['Cosmetic shimmer','LUMINOUS / FINISH',['Adds subtle decorative shimmer','Gives the blend a luminous appearance'],'A cosmetic finishing option rather than a botanical extract.'],
 ['No botanicals','KEEP IT SIMPLE',['Leaves out decorative petals and shimmer','Keeps the finish focused on your base and oils'],'All other choices remain included; the price stays the same.']]}
 ];
+const guideOilArt = {
+  'Fractionated coconut oil':'coconut',
+  'Sweet almond oil':'almond',
+  'Jojoba oil':'jojoba',
+  'Argan oil':'argan'
+};
+function showGuideOil(name) {
+  const image=document.getElementById('guide-image');
+  image.src=`assets/oil-${guideOilArt[name]}.webp`;
+  image.alt=`${name} with its botanical ingredients on a dark surface`;
+  document.getElementById('guide-stage-label').textContent=name;
+}
 const guideTabs=document.getElementById('guide-tabs');
 const guidePanel=document.getElementById('guide-panel');
 function renderGuide(index,moveFocus=false) {
@@ -48,6 +60,14 @@ function renderGuide(index,moveFocus=false) {
   const grid=document.createElement('div');grid.className='guide-grid';
   group.entries.forEach(([name,role,benefits,note],entryIndex)=>{
     const article=document.createElement('details');article.className='guide-card';article.open=entryIndex===0;
+    if(group.id==='oil') {
+      article.dataset.oil=guideOilArt[name];
+      article.addEventListener('toggle',()=>{
+        if(!article.open)return;
+        for(const sibling of grid.children)if(sibling!==article)sibling.open=false;
+        showGuideOil(name);
+      });
+    }
     const summary=document.createElement('summary');
     const eyebrow=document.createElement('p');eyebrow.className='eyebrow';eyebrow.textContent=role;
     const title=document.createElement('span');title.className='ingredient-name';title.textContent=name;
@@ -57,6 +77,7 @@ function renderGuide(index,moveFocus=false) {
     summary.append(title,eyebrow);article.append(summary,body,choose);grid.append(article);
   });
   guidePanel.append(grid);
+  if(group.id==='oil')showGuideOil(group.entries[0][0]);
   if(moveFocus)guideTabs.children[index].focus();
 }
 ingredientGuide.forEach((group,index)=>{

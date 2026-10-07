@@ -2,6 +2,7 @@
 const M = window.SaltRitual;
 const $ = id => document.getElementById(id);
 const storageKey='the-salt-ritual-basket-v1';
+const builderOilArt = {'Fractionated coconut oil':'coconut','Sweet almond oil':'almond','Jojoba oil':'jojoba','Argan oil':'argan'};
 let cart=[];
 try {cart=M.cleanCart(JSON.parse(localStorage.getItem(storageKey)||'[]'));} catch {}
 let draft={},step=0,extraEnabled=false,editingId=null;
@@ -53,6 +54,7 @@ function updateNext() {$('next').disabled=!stepReady();}
 function renderStep(focus=true) {
   const isReview=step===M.categories.length;
   $('builder').dataset.stage=isReview?'review':M.categories[step].id;
+  $('builder').dataset.oil=builderOilArt[draft.oil] || 'coconut';
   $('choices-form').hidden=isReview;$('review').hidden=!isReview;$('extra-botanical').hidden=step!==4;
   $('step-number').textContent=`STEP ${step+2} OF 7`;
   $('step-title').textContent=isReview?'Your blend, composed.':M.categories[step].title;
@@ -67,6 +69,7 @@ function renderStep(focus=true) {
     category.options.forEach(([value,description])=>{
       $('choices').append(choiceCard(value,description,category.id,draft[category.id]===value,()=>{
         draft[category.id]=value;
+        if(category.id==='oil')$('builder').dataset.oil=builderOilArt[value];
         if(category.id==='botanical') {if(draft.extra===value)draft.extra='';renderExtra();}
         updateSummary();updateNext();
       }));
