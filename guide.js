@@ -1,59 +1,59 @@
-'use strict';
+ 'use strict';
+// Cosmetic contributions and sensory preferences, not therapeutic promises.
 const ingredientGuide = [
-  {id:'base', label:'Scrub bases', intro:'Your base supplies the exfoliating crystals. The feel depends on the particle size and the finished blend—not simply whether it is salt or sugar.', entries:[
-    ['Fine sea salt','PHYSICAL EXFOLIATION','Salt crystals provide the scrub texture; choosing a fine grade gives a finer grain than coarse salt.','A classic salt-based scrub.'],
-    ['Pink Himalayan salt','PHYSICAL EXFOLIATION','A salt-based option with naturally pink-toned crystals. Its main purpose here is scrub texture and appearance.','A salt base with a rosy colour.'],
-    ['Epsom salt','PHYSICAL EXFOLIATION','Magnesium sulphate crystals offer an alternative to a sea-salt base. In this scrub menu, their role is the physical texture.','An alternative crystal base.'],
-    ['Fine sugar','PHYSICAL EXFOLIATION','Sugar crystals give a sugar-based scrub and dissolve in water. The fineness of the sugar and the formulation determine how the scrub feels.','A sugar base rather than salt.']
-  ]},
-  {id:'oil', label:'Base oils', intro:'Base oils give the scrub slip and help leave skin feeling softer. These are descriptions of the ingredients; the final feel depends on the complete formula.', entries:[
-    ['Fractionated coconut oil','EMOLLIENT / SLIP','A liquid coconut-derived oil commonly used to give cosmetic blends a smooth, light-feeling glide. It is the base oil; coconut fragrance is a separate scent choice.','A fluid, silky oil base.'],
-    ['Sweet almond oil','EMOLLIENT / SKIN FEEL','A plant oil used to soften skin feel and give the scrub a smooth glide. It is derived from almonds.','A traditional botanical oil with a soft finish.'],
-    ['Jojoba oil','EMOLLIENT / SKIN FEEL','Technically a liquid wax, jojoba is used in cosmetics as an emollient. It brings a silky feel to an oil blend.','A silky, wax-based botanical oil.'],
-    ['Argan oil','EMOLLIENT / SKIN FEEL','An oil from argan kernels, used in cosmetic oil blends for skin conditioning and a smooth finish. It is often the oil meant by “Moroccan oil”.','A luxurious botanical oil option.']
-  ]},
-  {id:'scent', label:'Scents', intro:'Scents give your scrub its fragrance character. Explore floral, citrus, tropical, warm and woody profiles to find your preference. The exact notes depend on the finished fragrance blend.', entries:[
-    ['Lavender','HERBAL / FLORAL','A recognisable floral-herbal profile with a fresh, aromatic character.','A herbal floral signature.'],
-    ['Pink grapefruit','BRIGHT / CITRUS','A citrus profile with tart, zesty and slightly bitter notes.','A crisp, bright fragrance.'],
-    ['Coconut','SOFT / TROPICAL','A rounded, creamy tropical scent profile. Choosing this fragrance does not mean choosing coconut as your base oil.','A soft, tropical fragrance.'],
-    ['Ylang ylang','RICH / FLORAL','An expressive floral profile, often described as sweet, heady and slightly exotic.','A full, expressive floral scent.'],
-    ['Vanilla','WARM / SWEET','A familiar warm profile with sweet, rounded notes.','A warm, softly sweet fragrance.'],
-    ['Orange','FRESH / CITRUS','A juicy citrus profile with a bright, sweet character.','A fresh citrus scent with a sweeter edge.'],
-    ['Oud','DEEP / WOODY','A woody fragrance profile with rich, resinous notes. The exact character depends on the fragrance blend.','A deeper, more woody signature.'],
-    ['Amber','WARM / RESINOUS','A fragrance accord rather than one specific botanical oil. Amber scents are typically warm, rounded and resinous.','A warm fragrance with depth.']
-  ]},
-  {id:'booster', label:'Skin boosters', intro:'Choose one additional ingredient to shape your oil blend, included in the jar price. Prefer fewer ingredients? Select no skin booster.', entries:[
-    ['Vitamin E','ANTIOXIDANT / SKIN CONDITIONING','An antioxidant ingredient used in cosmetic oil blends, also listed for skin conditioning. Its role is different from that of a fragrance or scrub crystal.','An antioxidant ingredient in your oil blend.'],
-    ['Squalane','EMOLLIENT / SKIN FEEL','An emollient used for a smooth, silky skin feel. It is an oil-phase ingredient and does not add exfoliating particles.','A silky addition to the oil blend.'],
-    ['Rosehip oil','EMOLLIENT / SKIN FEEL','A plant oil used in cosmetics for skin conditioning. Here it adds another botanical oil to your chosen base.','An additional botanical oil.'],
-    ['Avocado oil','EMOLLIENT / SKIN FEEL','A plant oil used in cosmetic blends for skin conditioning and an oil-rich feel.','A richer-feeling oil addition.'],
-    ['No skin booster','A SIMPLER BLEND','Keep the oil blend to your selected base oil without adding a separate booster. The jar price stays the same.','Fewer optional ingredients.']
-  ]},
-  {id:'botanical', label:'Botanicals', intro:'Botanicals and shimmer add finishing details for appearance and texture. One is included; a second different choice costs £2 per jar. Your fragrance is chosen separately in the scent category.', entries:[
-    ['Rose petals','APPEARANCE / BOTANICAL DETAIL','Dried petals add a floral visual detail. Their appearance is separate from the rose fragrance profile.','A romantic floral finish.'],
-    ['Lavender flowers','APPEARANCE / BOTANICAL DETAIL','Dried flowers add a herbal botanical detail to the blend. Choose lavender scent separately if that is your fragrance preference.','A herbal botanical finish.'],
-    ['Calendula petals','APPEARANCE / BOTANICAL DETAIL','Petals introduce yellow and golden botanical accents for a floral finishing detail.','A golden floral detail.'],
-    ['Chamomile','APPEARANCE / BOTANICAL DETAIL','A dried floral addition that brings botanical character to the scrub.','A delicate floral finish.'],
-    ['Finely ground oats','TEXTURE / BOTANICAL DETAIL','A finely ground botanical addition that adds texture and botanical character alongside your main scrub base.','An understated botanical addition.'],
-    ['Cosmetic shimmer','APPEARANCE / SHIMMER','A cosmetic-grade decorative option for a subtle shimmer. It sits in this finishing category and is not a botanical extract.','A subtly luminous finish.'],
-    ['No botanicals','A SIMPLE FINISH','Leave out the decorative botanicals and shimmer. All your other ingredient choices stay the same, with no price reduction.','A simpler blend without decorative extras.']
-  ]}
+{id:'base',label:'Scrub bases',image:'salt',alt:'Ivory and pink salt crystals in a shallow stone dish',intro:'Choose the texture at the heart of your scrub. Fine grains give a different feel from coarse crystals.',entries:[
+['Fine sea salt','EXFOLIATION',['Helps lift away dead skin as you massage','Gives your scrub a fine, crystalline texture'],'Particle size and the finished blend determine the feel.'],
+['Pink Himalayan salt','EXFOLIATION / COLOUR',['Helps lift away dead skin as you massage','Adds naturally rosy colour'],'Choose it for salt texture and appearance.'],
+['Epsom salt','EXFOLIATION',['Exfoliates through its crystalline texture','Offers an alternative to a sea-salt base'],'Magnesium sulphate crystals offer an alternative scrub base.'],
+['Fine sugar','EXFOLIATION',['Helps lift away dead skin as you massage','Dissolves in water as you rinse'],'A sugar-based option. Fineness and formulation determine how it feels.']]},
+{id:'oil',label:'Base oils',image:'oils',alt:'Golden botanical oil in a glass dish beside a pipette and almonds',intro:'Your oil gives the scrub glide and helps leave skin feeling softer. Pick the finish you prefer.',entries:[
+['Fractionated coconut oil','LIGHT / SILKY',['Adds a fluid, light-feeling glide','Helps soften skin feel'],'The base oil is separate from coconut fragrance.'],
+['Sweet almond oil','SOFT / SMOOTH',['Helps soften skin feel','Gives the scrub a smooth glide'],'Derived from almonds; check the final ingredient list if you have allergies.'],
+['Jojoba oil','SILKY / SMOOTH',['Adds a silky feel to the blend','Helps soften skin feel'],'A liquid botanical wax used as an emollient.'],
+['Argan oil','SMOOTH / CONDITIONING',['Contributes to softer-feeling skin','Adds a smooth botanical oil finish'],'An oil from argan kernels.']]},
+{id:'scent',label:'Scents',image:'scent',alt:'Pink grapefruit, orange peel, vanilla and a pale flower on a dark surface',intro:'Choose how you want your scrub to smell. These are fragrance notes and sensory preferences.',entries:[
+['Lavender','HERBAL / FLORAL',['Adds a fresh, herbal floral scent','Gives an aromatic fragrance character'],'Choose for fragrance preference.'],
+['Pink grapefruit','BRIGHT / CITRUS',['Adds a crisp, zesty scent','Brings a tart citrus edge'],'Choose for a bright fragrance.'],
+['Coconut','SOFT / TROPICAL',['Adds a creamy tropical scent','Gives a soft, rounded fragrance character'],'Your scent choice is separate from your base oil.'],
+['Ylang ylang','RICH / FLORAL',['Adds a full, expressive floral scent','Brings sweet, heady fragrance notes'],'Choose for a richer floral signature.'],
+['Vanilla','WARM / SWEET',['Adds warm, softly sweet notes','Rounds out the fragrance character'],'Choose for a familiar, warm scent.'],
+['Orange','FRESH / CITRUS',['Adds a juicy citrus scent','Brings a bright, sweeter citrus character'],'Choose for fresh citrus notes.'],
+['Oud','DEEP / WOODY',['Adds a deep, woody scent','Brings rich, resinous fragrance notes'],'Exact notes depend on the fragrance blend.'],
+['Amber','WARM / RESINOUS',['Adds warm, rounded fragrance notes','Brings a resinous sense of depth'],'Amber is a fragrance accord, rather than a single botanical oil.']]},
+{id:'booster',label:'Skin boosters',image:'oils',alt:'Close detail of a glass pipette and golden oil',intro:'One optional addition to your oil blend is included. Choose the skin feel you prefer, or keep it simple.',entries:[
+['Vitamin E','ANTIOXIDANT / CONDITIONING',['Adds an antioxidant ingredient to the oil blend','Contributes to skin conditioning'],'Its formulation role depends on the type and amount used.'],
+['Squalane','SILKY / SMOOTH',['Helps soften skin feel','Adds a smooth, silky glide'],'An emollient addition to the oil blend.'],
+['Rosehip oil','BOTANICAL / CONDITIONING',['Contributes to softer-feeling skin','Adds another botanical oil to your base'],'An additional botanical oil for your selected base.'],
+['Avocado oil','RICH / CONDITIONING',['Helps soften skin feel','Adds a richer oil feel to the blend'],'The finished formula determines the final feel.'],
+['No skin booster','KEEP IT SIMPLE',['Keeps your selected base oil on its own','Leaves out an optional extra ingredient'],'The jar price stays the same.']]},
+{id:'botanical',label:'Botanicals',image:'petals',alt:'Dried rose petals, lavender, calendula and chamomile flowers',intro:'Add colour, texture and a finishing detail. One choice is included; a second different botanical is £2 per jar.',entries:[
+['Rose petals','FLORAL / COLOUR',['Adds burgundy floral accents','Gives your jar a petal finish'],'A decorative addition; your scent is chosen separately.'],
+['Lavender flowers','HERBAL / DETAIL',['Adds a herbal botanical detail','Gives the blend visible flower accents'],'Choose lavender fragrance separately if that is your preferred scent.'],
+['Calendula petals','GOLDEN / COLOUR',['Adds golden-yellow accents','Gives your blend a floral finish'],'Chosen here for appearance and botanical detail.'],
+['Chamomile','DELICATE / FLORAL',['Adds small floral details','Gives the jar a delicate botanical finish'],'Chosen for its delicate floral appearance.'],
+['Finely ground oats','TEXTURE / DETAIL',['Adds a finely ground botanical texture','Gives the blend an understated finish'],'Finely ground oats are not necessarily colloidal oatmeal.'],
+['Cosmetic shimmer','LUMINOUS / FINISH',['Adds subtle decorative shimmer','Gives the blend a luminous appearance'],'A cosmetic finishing option rather than a botanical extract.'],
+['No botanicals','KEEP IT SIMPLE',['Leaves out decorative petals and shimmer','Keeps the finish focused on your base and oils'],'All other choices remain included; the price stays the same.']]}
 ];
 const guideTabs=document.getElementById('guide-tabs');
 const guidePanel=document.getElementById('guide-panel');
 function renderGuide(index,moveFocus=false) {
   const group=ingredientGuide[index];
+  const image=document.getElementById('guide-image');image.src=`assets/ingredient-${group.image}.webp`;image.alt=group.alt;
+  document.getElementById('ingredients').dataset.stage=group.id;
+  document.getElementById('guide-stage-label').textContent=group.label;
   for(const [i,button] of [...guideTabs.children].entries()) {button.setAttribute('aria-selected',String(i===index));button.tabIndex=i===index?0:-1;}
   guidePanel.setAttribute('aria-labelledby',`guide-tab-${group.id}`);guidePanel.replaceChildren();
   const intro=document.createElement('p');intro.className='guide-panel-intro';intro.textContent=group.intro;guidePanel.append(intro);
   const grid=document.createElement('div');grid.className='guide-grid';
-  group.entries.forEach(([name,role,description,choice],entryIndex)=>{
+  group.entries.forEach(([name,role,benefits,note],entryIndex)=>{
     const article=document.createElement('details');article.className='guide-card';article.open=entryIndex===0;
     const summary=document.createElement('summary');
     const eyebrow=document.createElement('p');eyebrow.className='eyebrow';eyebrow.textContent=role;
     const title=document.createElement('span');title.className='ingredient-name';title.textContent=name;
-    const body=document.createElement('p');body.textContent=description;
-    const choose=document.createElement('p');choose.className='choose-for';const label=document.createElement('strong');label.textContent='CHOOSE FOR';const text=document.createElement('span');text.textContent=choice;choose.append(label,text);
+    const body=document.createElement('ul');body.className='ingredient-benefits';
+    benefits.forEach(benefit=>{const item=document.createElement('li');item.textContent=benefit;body.append(item);});
+    const choose=document.createElement('p');choose.className='ingredient-note';choose.textContent=note;
     summary.append(title,eyebrow);article.append(summary,body,choose);grid.append(article);
   });
   guidePanel.append(grid);

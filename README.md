@@ -52,7 +52,7 @@ When you have a Stripe account, we can add a hosted checkout service to turn the
 - `styles.css`: colours and responsive layout.
 - `model.js`: ingredient menu, size prices and validated basket calculations. Prices are integer pence (800, 2000, 3000; extra botanical 200).
 - `script.js`: step-by-step builder, basket, browser storage and downloads.
-- `guide.js`: five-tab ingredient library, explaining all 28 menu options, their cosmetic roles and why to choose them.
+- `guide.js`: five-tab ingredient library with two concise benefit bullets per option, category artwork, and notes on scent, texture and cosmetic roles.
 - `assets/`: local botanical artwork and monogram; no external image or font requests. The orchid hero was created with built-in image generation as original website artwork. It is visual brand imagery, not a photograph of the finished product.
 - `tests/model.test.cjs`: run `node tests/model.test.cjs` to check pricing and saved-basket validation.
 
@@ -71,3 +71,7 @@ The guide separates cosmetic function from subjective fragrance profiles. It doe
 - PubChem, squalane (emollient / skin conditioning): https://pubchem.ncbi.nlm.nih.gov/compound/squalane
 - PubChem, tocopherols (antioxidant / skin conditioning): https://pubchem.ncbi.nlm.nih.gov/compound/14986
 - FDA, fragrance and aromatherapy claim distinctions: https://www.fda.gov/cosmetics/cosmetic-products/aromatherapy
+
+## Category artwork
+
+Four generated editorial still lifes illustrate salt, oils, fragrance notes and dried botanicals. These are illustrative category artwork, not photographs of finished products. The guide image and builder background change by ingredient stage; boosters use a closer oil composition. Optimised WebP assets total under 500 KB.

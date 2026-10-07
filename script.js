@@ -52,6 +52,7 @@ function stepReady() {return step===M.categories.length ? M.isComplete(draft) : 
 function updateNext() {$('next').disabled=!stepReady();}
 function renderStep(focus=true) {
   const isReview=step===M.categories.length;
+  $('builder').dataset.stage=isReview?'review':M.categories[step].id;
   $('choices-form').hidden=isReview;$('review').hidden=!isReview;$('extra-botanical').hidden=step!==4;
   $('step-number').textContent=`STEP ${step+2} OF 7`;
   $('step-title').textContent=isReview?'Your blend, composed.':M.categories[step].title;
